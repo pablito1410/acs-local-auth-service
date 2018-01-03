@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pablo.acs.local.auth.service.domain.command.Command;
 
+import java.util.Arrays;
+
 public class CreateUserCommand implements Command {
 
     private final String name;
@@ -29,5 +31,14 @@ public class CreateUserCommand implements Command {
 
     public String getExternalId() {
         return externalId;
+    }
+
+    @Override
+    public String toString() {
+        return "CreateUserCommand{" +
+                "name='" + name + '\'' +
+                ", photo=" + Arrays.toString(photo) +
+                ", externalId='" + externalId + '\'' +
+                '}';
     }
 }

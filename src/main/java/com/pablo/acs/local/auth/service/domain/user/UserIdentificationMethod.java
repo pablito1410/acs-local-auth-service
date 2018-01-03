@@ -41,7 +41,7 @@ public class UserIdentificationMethod {
     @Embeddable
     public static class UserIdentificationMethodId implements Serializable {
 
-        @ManyToOne(optional = false, targetEntity = User.class)
+        @ManyToOne(optional = false, targetEntity = User.class, cascade = CascadeType.ALL)
         private User user;
 
         @ManyToOne(optional = false, targetEntity = IdentifyMethod.class)

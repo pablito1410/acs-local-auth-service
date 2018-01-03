@@ -1,4 +1,4 @@
-package com.pablo.acs.local.auth.service.domain.user.query;
+package com.pablo.acs.local.auth.service.domain.user.query.projection;
 
 import java.util.Collection;
 
@@ -12,5 +12,12 @@ public class IdentifiersWrapper {
 
     public Collection<UserIdentifyMethodProjection> getIdentifiers() {
         return identifiers;
+    }
+
+    @Override
+    public String toString() {
+        return "IdentifiersWrapper{" +
+                "identifiers=" + identifiers +
+                '}';
     }
 }

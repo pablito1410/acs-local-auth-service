@@ -21,7 +21,7 @@ public class User {
     @Column(name = "PHOTO", length = 8096)
     private byte[] photo;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "USERS_IDENTIFICATION_METHODS",
             joinColumns = {@JoinColumn(name = "USER_ID")},
             inverseJoinColumns = {@JoinColumn(name = "IDENTIFICATION_METHOD_ID")}
@@ -40,4 +40,24 @@ public class User {
         return id;
     }
 
+    public String getExternalId() {
+        return externalId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", externalId='" + externalId + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    void setName(final String name) {
+        this.name = name;
+    }
 }

@@ -2,20 +2,26 @@ package com.pablo.acs.local.auth.service.domain.user.command;
 
 import com.pablo.acs.local.auth.service.domain.command.Command;
 
+import java.util.Collection;
+
 public class AddUserIdentificationMethod implements Command {
-    private Long userId;
-    private Integer identificationMethodId;
-    private byte[] identifier;
 
-    public Long getUserId() {
-        return userId;
+    private Collection<UserIdentifier> identifiers;
+
+    private AddUserIdentificationMethod() { }
+
+    public AddUserIdentificationMethod(final Collection<UserIdentifier> identifiers) {
+        this.identifiers = identifiers;
     }
 
-    public Integer getIdentificationMethodId() {
-        return identificationMethodId;
+    public Collection<UserIdentifier> getIdentifiers() {
+        return identifiers;
     }
 
-    public byte[] getIdentifier() {
-        return identifier;
+    @Override
+    public String toString() {
+        return "AddUserIdentificationMethod{" +
+                "identifiers=" + identifiers +
+                '}';
     }
 }
